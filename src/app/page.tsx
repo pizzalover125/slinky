@@ -6,7 +6,7 @@ import { themeToStyle, THEMES } from "@/lib/themes";
 import { themeFontVars } from "@/lib/fonts";
 import { DEFAULT_CUSTOMIZATION } from "@/lib/types";
 
-const REPO_URL = "https://github.com/slinky-co/slinky";
+const REPO_URL = "https://github.com/pizzalover125/slinky";
 
 function ThemeStrip() {
   return (
@@ -126,7 +126,7 @@ export default function Home() {
             <Chip tone="lime">MIT licensed · free forever</Chip>
 
             <h1 className="mt-6 max-w-4xl text-[clamp(3rem,9vw,7rem)] leading-[0.88]">
-              One link.
+              One link
               <br />
               For <span className="text-hot">free</span>.
             </h1>

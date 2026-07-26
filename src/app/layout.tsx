@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://yourslinky.co",
   ),
   title: {
-    default: "slinky — loud, raw, open-source link-in-bio",
+    default: "slinky",
     template: "%s — slinky",
   },
   description:
     "A free, open-source, ultra-customizable link-in-bio tool for small creators. Pick from a wildly diverse theme library. No lock-in, no paywalled customization.",
   openGraph: {
-    title: "slinky — loud, raw, open-source link-in-bio",
+    title: "slinky",
     description:
       "A free, open-source link-in-bio tool for small creators. MIT licensed.",
     type: "website",
