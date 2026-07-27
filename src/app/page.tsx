@@ -126,9 +126,9 @@ export default function Home() {
             <Chip tone="lime">MIT licensed · free forever</Chip>
 
             <h1 className="mt-6 max-w-4xl text-[clamp(3rem,9vw,7rem)] leading-[0.88]">
-              One link
+              A link in bio
               <br />
-              For <span className="text-hot">free</span>.
+              built for you.
             </h1>
 
             <p className="mt-8 max-w-xl text-xl leading-relaxed text-ink/80">
@@ -141,7 +141,7 @@ export default function Home() {
               </Button>
               <Button asChild variant="neutral" size="lg">
                 <a href={REPO_URL} target="_blank" rel="noreferrer">
-                  See an example
+                  GitHub →
                 </a>
               </Button>
             </div>
