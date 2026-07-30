@@ -36,6 +36,12 @@ export type LinkRow = {
   created_at: string;
 };
 
+export type RsvpRow = {
+  id: string;
+  email: string;
+  created_at: string;
+};
+
 /**
  * Shaped to match what `supabase gen types typescript` emits — the client's
  * generics look for `Relationships` and the `graphql_public`/`__InternalSupabase`
@@ -65,6 +71,15 @@ export interface Database {
           click_count?: number;
         };
         Update: Partial<Omit<LinkRow, "id" | "created_at">>;
+        Relationships: [];
+      };
+      rsvps: {
+        Row: RsvpRow;
+        Insert: Omit<RsvpRow, "id" | "created_at"> & {
+          id?: string;
+          created_at?: string;
+        };
+        Update: Partial<Omit<RsvpRow, "id" | "created_at">>;
         Relationships: [];
       };
     };

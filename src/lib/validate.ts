@@ -36,6 +36,29 @@ export function isValidUrl(raw: string): boolean {
   return normalizeUrl(raw) !== null;
 }
 
+/**
+ * Deliberately loose. The only thing worth rejecting here is input that
+ * plainly isn't an address; anything stricter starts turning away valid,
+ * deliverable mail, and the real proof an address works is a delivered email.
+ */
+const EMAIL_RE = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/;
+
+export function validateEmail(raw: string): {
+  ok: boolean;
+  value: string;
+  error?: string;
+} {
+  const value = raw.trim().toLowerCase();
+
+  if (!value) return { ok: false, value, error: "Enter your email." };
+  if (value.length > 254)
+    return { ok: false, value, error: "That email is too long." };
+  if (!EMAIL_RE.test(value))
+    return { ok: false, value, error: "That doesn't look like an email." };
+
+  return { ok: true, value };
+}
+
 const USERNAME_RE = /^[a-z0-9](?:[a-z0-9-]{1,28}[a-z0-9])$/;
 
 /**
@@ -48,6 +71,7 @@ export const RESERVED_USERNAMES = new Set([
   "auth",
   "create",
   "dashboard",
+  "demo",
   "go",
   "login",
   "logout",
